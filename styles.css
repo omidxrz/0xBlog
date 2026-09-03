@@ -1,0 +1,256 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #555555;
+  --line: #cfcfcf;
+  --link: #0000ee;
+  --visited: #551a8b;
+  --hover: #f3f3f3;
+  --panel: #ffffff;
+  --date-col: 170px;
+  --size-col: 70px;
+  --desc-col: 140px;
+}
+
+html[data-theme="dark"] {
+  --bg: #0f1115;
+  --text: #eceff4;
+  --muted: #b7bcc8;
+  --line: #3a3f48;
+  --link: #8cb4ff;
+  --visited: #b79bff;
+  --hover: #1a1f28;
+  --panel: #11151d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Courier New", Courier, monospace;
+  line-height: 1.4;
+}
+
+.container {
+  width: min(980px, 96%);
+  margin: 0 auto;
+  padding: 16px 0 44px;
+}
+
+.site-header {
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.nav a {
+  color: var(--link);
+  text-decoration: none;
+  font-size: 16px;
+  padding: 0;
+}
+
+.nav a:visited {
+  color: var(--visited);
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+.nav a.active {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.theme-switch::before {
+  content: "[";
+}
+
+.theme-switch::after {
+  content: "]";
+}
+
+.theme-btn {
+  border: 0;
+  background: transparent;
+  color: var(--link);
+  padding: 0;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.theme-btn + .theme-btn::before {
+  content: "| ";
+  color: var(--muted);
+}
+
+.theme-btn:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.theme-btn.active {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.section {
+  padding: 2px 0 10px;
+  margin-bottom: 22px;
+}
+
+.section-title {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.list-header {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) var(--date-col) var(--size-col) var(--desc-col);
+  gap: 8px;
+  padding: 2px 0 6px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.year-group {
+  margin: 0;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) var(--date-col) var(--size-col) var(--desc-col);
+  gap: 8px;
+  align-items: start;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  padding: 4px 0;
+  margin: 0 0 3px 0;
+}
+
+.item-link {
+  color: var(--link);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-link:visited {
+  color: var(--visited);
+}
+
+.item-link:hover {
+  color: var(--text);
+}
+
+.arrow {
+  display: none;
+}
+
+.item-date {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: left;
+  white-space: nowrap;
+  align-self: start;
+}
+
+.item-size,
+.item-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.item-link::before {
+  content: "";
+  width: 20px;
+  height: 22px;
+  flex: 0 0 20px;
+  background-image: url("https://odlinfo2.bfs.de/icons/folder.gif");
+  background-repeat: no-repeat;
+  background-size: 20px 22px;
+}
+
+.about-text {
+  margin: 8px 0 10px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.server-footer {
+  margin-top: 14px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .list-header,
+  .item {
+    grid-template-columns: 1fr 130px;
+  }
+
+  .list-header span:nth-child(3),
+  .list-header span:nth-child(4),
+  .item-size,
+  .item-desc {
+    display: none;
+  }
+
+  .item-date {
+    text-align: left;
+    font-size: 13px;
+  }
+}
