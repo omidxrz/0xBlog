@@ -212,7 +212,7 @@ body {
   width: 20px;
   height: 22px;
   flex: 0 0 20px;
-  background-image: url("https://odlinfo2.bfs.de/icons/folder.gif");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='20'%20height='22'%20viewBox='0%200%2020%2022'%20shape-rendering='crispEdges'%3E%3Cpath%20d='M3%206h16v14H3z'%20fill='%23333'/%3E%3Cpath%20d='M1.5%203.5h6v2h9.5v11.5h-15.5z'%20fill='%23FFCC99'%20stroke='%23000'/%3E%3Cpath%20d='M2%205h5v1H2z'%20fill='%23996633'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: 20px 22px;
 }
