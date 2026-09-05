@@ -8,8 +8,7 @@
   --hover: #f3f3f3;
   --panel: #ffffff;
   --date-col: 170px;
-  --size-col: 70px;
-  --desc-col: 140px;
+  --desc-col: 230px;
 }
 
 html[data-theme="dark"] {
@@ -33,7 +32,8 @@ body {
   padding: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Courier New", Courier, monospace;
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas,
+    "Liberation Mono", monospace;
   line-height: 1.4;
 }
 
@@ -141,7 +141,7 @@ body {
 
 .list-header {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) var(--date-col) var(--size-col) var(--desc-col);
+  grid-template-columns: minmax(300px, 1fr) var(--date-col) var(--desc-col);
   gap: 8px;
   padding: 2px 0 6px 0;
   border-bottom: 1px solid var(--line);
@@ -157,7 +157,7 @@ body {
 
 .item {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) var(--date-col) var(--size-col) var(--desc-col);
+  grid-template-columns: minmax(300px, 1fr) var(--date-col) var(--desc-col);
   gap: 8px;
   align-items: start;
   border: 0;
@@ -199,12 +199,11 @@ body {
   align-self: start;
 }
 
-.item-size,
 .item-desc {
   margin: 0;
   color: var(--muted);
   font-size: 14px;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 
 .item-link::before {
@@ -243,8 +242,6 @@ body {
   }
 
   .list-header span:nth-child(3),
-  .list-header span:nth-child(4),
-  .item-size,
   .item-desc {
     display: none;
   }
